@@ -3,8 +3,8 @@ EID: sz4554
 
 == Comments and Questions ==
 
-Is there an assumption in this book that the environment is known? So
-we focus on the issue of partial observability.
+Is there an assumption in this book that the envrioment is known? So
+we focus on the issue of partial observibility.
 
 It is also emphasized in Sutton's book that the physical body of the
 agent is regarded as part of the environment - it responds to the
@@ -36,19 +36,19 @@ Is the reason simply that it can forget the noise in the history?
 
 The author starts by giving some instructions on probability. He
 identifies the probability part in robotics - it's not realistic for a
-robot to have complete observation of the environment.
+robot to have complete observation of the envrioment.
 
 The author uses the term state to characterize the environment. Then
 he defines a state representation to be complete if it gives the robot
-enough information to predict the future. A robot can retrieve
+enough information to predict the future. A robot can retreive
 information from information by sensor, and changes its state by
 control.
 
-The states, denoted as x, are hidden. It can be inferred by
+The states, denoted as x, are hidden. It can be infereced by
 measurement and control by the robot. What a robot computed from these
-evidence is called belief. The author uses a dynamic Bayes network to
-describe this. Then he describes the Bayes filter algorithm to compute
-the belief.
+evidence is called belief. The author uses a dynamic Bayes
+network to describe this. Then he describes the Bayes filter
+algorithm to compute the belief.
 
 The author ends up with the implementation staff. There is a trade-off
 between efficiency and accuracy.
