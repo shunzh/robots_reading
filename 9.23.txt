@@ -15,7 +15,7 @@ Kalman filter does *incorporate* all data provided, but it actually
 uses meta-data (mean, variance), instead of exploiting the data
 themselves.
 
-Unlike a general Bayesian filter, we may do not require P(x'|x, u)
+Unlike a general Bayesian filter, we may not require P(x'|x, u)
 explicitly for Kalman filter, if the mean and variance of the
 probablity distribution can be modeled - this kind of knowledge can be
 that the transition would be more uncertain in some known cases.. 
@@ -31,19 +31,33 @@ just believes that the criterion that Kalman filter performs badly
 doesn't make sense.
 
 I agree that the sensor probability distribution mostly follows
-Gaussian distribution. It's possible to learn the distribution model
-from P(x|z) we have. It can be done by having a bag of models and
-finding out which one fits the distribution the best.
+Gaussian distribution. However, it's possible to learn the
+distribution model from P(x|z) we have. It can be done by having a bag
+of models and finding out which one fits the distribution the best.
 
-I'm not sure about the "white noise"
+I'm not sure about the purpose of "white noise" the author argues. But
+it's helpful to keep some non-zero value throughout the distribution,
+for the kidnapping situation.
+
+In the example, I think it's a good point to understand the inverse of
+variance as confidence, for gaining the new belief.
 
 *. Probabilistic Robotics
 
 For discrete state spaces, we could apply Kalman Filter by making it
-continus first by interpolatoin. Particle filter is more convenient
-for this discrete environment actually.
+continus first by interpolatoin. If we don't want the Gaussian
+assumption, Particle filter is more convenient for this discrete
+environment.
 
-Sigma for the sensor?
+In the description of linear Guassian Systems, would epsilon be a
+function epsilon(x, x')? I don't think it's a random variable
+indepedent from the state transition.
+
+I think it's a good point to separate the deterministic part (Ax + Bu)
+and stochastic part (epsilon) in the representation.
+
+I haven't looked into the details in 3.2.4. For step 4, why is there
+no C_t on the left side?
 
 == Summary ==
 
@@ -54,7 +68,20 @@ preferred. We cannot model everything perfectly for a system to
 follow. Among what we modelled, there could be error. Also, we might
 not be given complete information, no matter how we try to model it.
 
-The Kalman filter is an optimal recursive data processing algorithm.
-It inherits most of the features from Bayesian network.
+Like a general Bayesian filter, Kalman filter tries to figure out the
+hidden state of the system by the prior knowledge and the observed
+measurement. The assumption added is that the noises are white and
+Gaussian.
+
+The author also gave an example on computation. Basically, we weight
+the previous belief and the measurement according to their variance.
 
 *. Probabilistic Robotics
+
+The transition probability and measurement probability can be written
+in a linear transition way, plus a Guassian random factor.
+
+In the Kalman filter algorithm, we start with updating mean and
+varance by linear transformation. We also put a variance factor on the
+old variance. After that, we update them with the measurement by
+considering how much the measurement should be incorporated.
