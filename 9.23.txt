@@ -1,0 +1,60 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Stochastic models, estimation, and control
+
+Compared to deterministic models, probabilistic models win as they are
+more tolerant on errors and incompleteness. Would a hybrid model
+could have better performance? The agent follows a deterministic
+model, which typically does planning, while a probabilistic model
+works behind the scene and give advice to the model in the front.
+
+Kalman filter does *incorporate* all data provided, but it actually
+uses meta-data (mean, variance), instead of exploiting the data
+themselves.
+
+Unlike a general Bayesian filter, we may do not require P(x'|x, u)
+explicitly for Kalman filter, if the mean and variance of the
+probablity distribution can be modeled - this kind of knowledge can be
+that the transition would be more uncertain in some known cases.. 
+
+The author spoke highly of Kalman filter, while most of the features
+he talked about are shared by a common Bayesian Filter. For example, a
+Bayesian Filter makes use of the prior knowledge and the current
+observation to gain the current belief.
+
+I think it's like hermatic wording to say "the Kalman filter is
+optimal with respect to virtually any criterion that makes sense". He
+just believes that the criterion that Kalman filter performs badly
+doesn't make sense.
+
+I agree that the sensor probability distribution mostly follows
+Gaussian distribution. It's possible to learn the distribution model
+from P(x|z) we have. It can be done by having a bag of models and
+finding out which one fits the distribution the best.
+
+I'm not sure about the "white noise"
+
+*. Probabilistic Robotics
+
+For discrete state spaces, we could apply Kalman Filter by making it
+continus first by interpolatoin. Particle filter is more convenient
+for this discrete environment actually.
+
+Sigma for the sensor?
+
+== Summary ==
+
+*. Stochastic models, estimation, and control
+
+The author started with the reasons why a deterministic model is not
+preferred. We cannot model everything perfectly for a system to
+follow. Among what we modelled, there could be error. Also, we might
+not be given complete information, no matter how we try to model it.
+
+The Kalman filter is an optimal recursive data processing algorithm.
+It inherits most of the features from Bayesian network.
+
+*. Probabilistic Robotics
