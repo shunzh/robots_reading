@@ -6,10 +6,10 @@ EID: sz4554
 *. Stochastic models, estimation, and control
 
 Compared to deterministic models, probabilistic models win as they are
-more tolerant on errors and incompleteness. Would a hybrid model could
-have better performance? The agent follows a deterministic model,
-which typically does planning, while a probabilistic model works
-behind the scene and give advice to the model in the front.
+more tolerant on errors and incompleteness. Would a hybrid model
+could have better performance? The agent follows a deterministic
+model, which typically does planning, while a probabilistic model
+works behind the scene and give advice to the model in the front.
 
 Kalman filter does *incorporate* all data provided, but it actually
 uses meta-data (mean, variance), instead of exploiting the data
@@ -17,15 +17,15 @@ themselves.
 
 Unlike a general Bayesian filter, we may not require P(x'|x, u)
 explicitly for Kalman filter, if the mean and variance of the
-probability distribution can be modeled - this kind of knowledge can
-be that the transition would be more uncertain in some known cases.. 
+probablity distribution can be modeled - this kind of knowledge can be
+that the transition would be more uncertain in some known cases.. 
 
 The author spoke highly of Kalman filter, while most of the features
 he talked about are shared by a common Bayesian Filter. For example, a
 Bayesian Filter makes use of the prior knowledge and the current
 observation to gain the current belief.
 
-I think it's like hermetic wording to say "the Kalman filter is
+I think it's like hermatic wording to say "the Kalman filter is
 optimal with respect to virtually any criterion that makes sense". He
 just believes that the criterion that Kalman filter performs badly
 doesn't make sense.
@@ -45,27 +45,26 @@ variance as confidence, for gaining the new belief.
 *. Probabilistic Robotics
 
 For discrete state spaces, we could apply Kalman Filter by making it
-continuous first by interpolation. If we don't want the Gaussian
+continus first by interpolatoin. If we don't want the Gaussian
 assumption, Particle filter is more convenient for this discrete
 environment.
 
-In the description of linear Gaussian Systems, would epsilon be a
+In the description of linear Guassian Systems, would epsilon be a
 function epsilon(x, x')? I don't think it's a random variable
-independent from the state transition.
+indepedent from the state transition.
 
 I think it's a good point to separate the deterministic part (Ax + Bu)
 and stochastic part (epsilon) in the representation.
 
 The intuition on K is that it weights on variance of previous belief
-and that of measurement. I didn't follow the proofs in 3.2.4. Just for
-symmetric, on the right side of the equation, why there is no C_t on
-the left side?
+and that of measurement. Just for symmetric, on the right side of the
+equation, why there is no C_t on the left side?
 
 If the transition or measurement function is not linear, my intuition
-is to change the basis of states to make the functions as linear as
-possible. That is, using f(x) as states such that g and h are more
-linear.  Taylor expansion is a good thought, but it only works on one
-point. I observe that it has a poor performance on fitting the true
+is to change the basis of states to make it as linear as possible.
+That is, using f(x) as states such that g and h are more linear.
+Taylor expansion is a good thought, but it only works on one point. I
+observe that it has a poor performance on fitting the true
 distribution (well, expect on white noise..)
 
 == Summary ==
@@ -89,11 +88,11 @@ their variance. This weighting function is denoted as K.
 *. Probabilistic Robotics
 
 The transition probability and measurement probability can be written
-in a linear transition way, plus a Gaussian random factor.
+in a linear transition way, plus a Guassian random factor.
 
 In the Kalman filter algorithm, we start with updating mean and
-variance by linear transformation. We also put a variance factor on
-the old variance. After that, we update them with the measurement by
+varance by linear transformation. We also put a variance factor on the
+old variance. After that, we update them with the measurement by
 considering how much the measurement should be incorporated.
 
 The Extended Kalman Filter deals with the situation that the
