@@ -1,0 +1,64 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Probabilistic Robotics
+
+> Chapter 1.1 - 1.3
+
+The example of coastal navigation shows the importance of observation,
+otherwise error could accumulate. I don't see why this shows the
+advantage of a probabilistic model.
+
+Is the need to approximate shared by both model-based and
+probabilistic robotics? If the world is continuous and doesn't follow
+any simple distribution, approximation is the only solution?
+
+> Chapter 4
+
+The Kalman filter, or generally parameterized filters, can do well in
+a proper subspace of the distribution space. So they are less
+resource-adaptive. Nonprarameteric filters put their efforts on the
+whole space. As a sacrifice, their approximation ability on certain
+distributions is worse than parameteric ones.
+
+The discrete Bayes filter is an obvious way to apply Bayes filter to
+discrete environment. The probabilities are finite, so possible to be
+implemented.
+
+Compared to Kalman filter, discrete Kalman filter is adaptive to any
+probability distribution on states. Particle filter is more than that,
+it's also adaptive to any transition function, using samping, instead
+of linear transition.
+
+> Chapter 7
+
+
+
+== Summary ==
+
+*. Probabilistic Robotics
+
+In chapter 1, the author gave some insights on the advantage of
+employing probability in robotics. Rven if the environment is
+completely predictable, the robot still needs to depend on probability
+to be robust on errors - in predication or measurement.
+
+The advantage of probabilistic robotics are that they are more robust
+on predication or measurement errors, and that they require less on
+accuracy of models. However, they usually require more computational
+complexity. Also, as the envrionment is usually continuous, they need
+to approximate.
+
+In chapter 4, 
+Histogram filters are also a approach used for continuous state
+spaces, by deviding them into discrete ones. The benefit is that it
+becomes resource-adaptive.
+
+Scatter the particles with the probability of the prior belief, then 
+do the following loop:
+1. Transition: move each particle with its transition probability.
+2. Observation: weight each particle with the observation probability.
+3. scatter the particles again, but "larger" particles are drawn with
+higher posterior probability.
