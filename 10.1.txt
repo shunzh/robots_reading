@@ -31,6 +31,9 @@ For dynamic decomposition, the filter should start with a very high
 resolution first? Then it's possible to combine uninteresting states.
 Otherwise, information is lost in the first place..
 
+What's the purpose of Binary Bayes filters? The author just wants to
+show log odds ratio?
+
 I think Particle filter is just a discrete version of histogram
 filter, in terms of representation of probability of states. It should
 be more computationally effecient, and requires less memory.
@@ -91,18 +94,22 @@ accuracy of models. However, they usually require more computational
 complexity. Also, as the envrionment is usually continuous, they need
 to approximate.
 
-In chapter 4, 
-Histogram filters are also a approach used for continuous state
-spaces, by deviding them into discrete ones. The benefit is that it
-becomes resource-adaptive.
+In chapter 4, the author described nonparameterized filters. Histogram
+filters are discrete version of Bayesian filter. It's also a approach
+used for continuous state spaces, by deviding them into discrete ones.
+The benefit is that it becomes resource-adaptive.
 
 Compared to Kalman filter, discrete Kalman filter and particle filter
 areadaptive to any probability distribution on states. They are also
-adaptive to non-linear transitions.
+adaptive to nonlinear transitions.
 
+Binary Baysian filter deals with the envrionment which contains 2
+states, which should static. It employes log odds ratio, which makes
+computation more elegent.
 
-Scatter the particles with the probability of the prior belief, then 
-do the following loop:
+The particle filter is a popular nonparameterized filter. It scatter
+the particles with the probability of the prior belief, then do the
+following loop:
 1. Transition: move each particle with its transition probability.
 2. Observation: weight each particle with the observation probability.
 3. scatter the particles again, but "larger" particles are drawn with
@@ -112,7 +119,13 @@ As the author says, the particle filter is like survival of the
 fittest. It is a kind of Monte-Carlo method. It simulates many agents
 and only allow the ones consistent with observation survive.
 
-Higher samples result in more accurate approximation.
+It's possible to get density information by selecting a distribution,
+usually Gaussian. The author also claims that higher samples result in
+more accurate approximation.
 
+In chapter 7, the author gives an example of application of Bayesian
+filter - mobile localization. Its environment features are similar to
+a general environment an agent could face with (dynamic/static,
+active/passive, etc.).
 
 *. Practical Vision-Based Monte Carlo Localization on a Legged Robot
