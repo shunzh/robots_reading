@@ -51,7 +51,7 @@ better to divide states properly at the first place.
 
 For the author's concern on resampling, does the variance matter?
 Actually, what's the criteria for a filtering algorithm - the
-difference from the result of Bayesian filter (if considered as the
+difference from the result of Baysien filter (if considered as the
 ideal one), or whether the most likely state is the true state?
 
 > Chapter 7
@@ -92,7 +92,7 @@ threshold, when the distance is too far.
 *. Probabilistic Robotics
 
 In chapter 1, the author gave some insights on the advantage of
-employing probability in robotics. Even if the environment is
+employing probability in robotics. Rven if the environment is
 completely predictable, the robot still needs to depend on probability
 to be robust on errors - in predication or measurement.
 
@@ -103,7 +103,7 @@ complexity. Also, as the environment is usually continuous, they need
 to approximate.
 
 In chapter 4, the author described nonparametric filters. Histogram
-filters are discrete version of Bayesian filter. It's also an approach
+filters are discrete version of Bayesian filter. It's also a approach
 used for continuous state spaces, by dividing them into discrete ones.
 The benefit is that it becomes resource-adaptive.
 
@@ -111,7 +111,7 @@ Compared to Kalman filter, discrete Kalman filter and particle filter
 are adaptive to any probability distribution on states. They are also
 adaptive to nonlinear transitions.
 
-Binary Bayesian filter deals with the environment which contains 2
+Binary Baysian filter deals with the environment which contains 2
 states, which should static. It employs log odds ratio, which makes
 computation more elegant.
 
