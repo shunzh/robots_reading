@@ -27,13 +27,13 @@ its "fast and cheap".
 
 Overall, I think the authors are using very overfitted methods to
 decide each object. They are rule-based instead of autonomously
-learned. If the environment changed, they need to repeat experiments
+learned. If the envrionment changed, they need to repeat experiments
 to figure out new parameters. What the robots learned cannot be
 transferred (even though what we learned can be transferred to the new
 task..).
 
 The authors use aspect ratio to approximate the likelihood. It can go
-further than that if incorporated with localization.  If the map is
+further that that by incorperated with localization.  If the map is
 given, where we are and what we can see are correlated.  Usually we
 contribute what we see to the belief of where we are. It can go in the
 inverse way.
@@ -47,7 +47,7 @@ localization here.
 What's the rationale of not using common edge detection algorithms or
 fast approximation ones?
 
-Same as in previous paper, why don't we incorporate this with
+Same as in previous paper, why don't we incorperate this with
 localization? p(z|x) can tell us what lines we should able to see,
 then the lines can be classified according to the map. Or, p(z|x) can
 tell what pixels we can observe, so we don't need to even detect lines
@@ -66,13 +66,13 @@ Same as the first paper, the authors believe there is a mapping from
 color components to class of color. Should we involve position-related
 variable? Same color observation may be in different class depending
 on context. But for ball as orange, goal as blue, ground as green,
-they are disjunct enough and should have no such necessity..
+they are disjunct enough and should have no such necessarity..
 
 Are color segmentation and object recognition usually separated? I
 think these two should talk to each other.
 
 So there is a clustering phase before LearnGaussParams? Take the
-experiment for example. In the first step, white and green are both
+experiement for example. In the first step, white and green are both
 unknown. They cluster the pixels to two classes first, and call the
 class with more pixels as green, and the other as white?
 
@@ -97,7 +97,7 @@ pre-classifed samples.
 
 They rotate the color space to make the judging conditions become
 linear. Then, they decide the color class for each color by binary
-operations. After than, they encode the classified color line-wise, and
+operations. After than, they encode the classifed color linewise, and
 find regions of same color by union and find.
 
 *. The UT Austin Villa 2003 Four-Legged Team
@@ -118,8 +118,8 @@ Finally, they find out the intersection of lines.
 
 *. Autonomous Color Learning on a Mobile Robot
 
-The authors describe an algorithm to learn color autonomously. The idea
+The authors describe an algorithm to learn color automously. The idea
 is expose the robot to a view which helps it learn certain colors. The
-knowledge is represented in Gaussian distribution, for a given sample,
+knowledge is represented in Gaussien distribution, for a given sample,
 it only needs to compute the mean and variance of pixels with unknown
 colors.
