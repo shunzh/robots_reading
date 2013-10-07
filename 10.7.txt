@@ -1,0 +1,112 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Fast and Cheap Color Image Segmentation for Interactive Robots
+
+This paper tackles a comparatively easy problem. Classes are already
+labeled on colors. They just determine a way to find out regions of
+same color in an efficient way.
+
+Deciding the color of a sample can be done in parallel (deciding it's
+orange or blue, in the paper). This is not restricted to their
+representation as binary bits, thus not actually an advantage of their
+approach.
+
+They can choose different basis in color space for different class of
+color. I can hardly imagine a color concept can be a (super-)cube in
+color space, but they can always change the basis to make it as cube
+as possible.
+
+I think the approach described in this paper would have worse
+performance than K-nearest neighbor. Their win is really because of
+its "fast and cheap".
+
+*. The UT Austin Villa 2003 Four-Legged Team
+
+Overall, I think the authors are using very overfitted methods to
+decide each object. They are rule-based instead of autonomously
+learned. If the envrionment changed, they need to repeat experiments
+to figure out new parameters. What the robots learned cannot be
+transferred (even though what we learned can be transferred to the new
+task..).
+
+The authors use aspect ratio to approximate the likelihood. It can go
+further that that by incorperated with localization.  If the map is
+given, where we are and what we can see are correlated.  Usually we
+contribute what we see to the belief of where we are. It can go in the
+inverse way.
+
+I don't think ratio of width/height would help for the goal. It
+depends on the view of the robot. So it's helpful if involving
+localization here.
+
+*. The UT Austin Villa 2004 RoboCup Four-Legged Team: Coming of Age
+
+What's the rationale of not using common edge detection algorithms or
+fast approximation ones?
+
+Same as in previous paper, why don't we incorperate this with
+localization? p(z|x) can tell us what lines we should able to see,
+then the lines can be classified according to the map. Or, p(z|x) can
+tell what pixels we can observe, so we don't need to even detect lines
+- but our belief over lines still exists.
+
+Actually, if the map is not known, line detection in this paper is
+close to build the map.
+
+*. Autonomous Color Learning on a Mobile Robot
+
+This is an interesting paper as it's doing unsupervised learning to
+learn the colors. It would be more interesting if it can do learning
+on object segmentation.
+
+Same as the first paper, the authors believe there is a mapping from
+color components to class of color. Should we involve position-related
+variable? Same color observation may be in different class depending
+on context. But for ball as orange, goal as blue, ground as green,
+they are disjunct enough and should have no such necessarity..
+
+Are color segmentation and object recognition usually separated? I
+think these two should talk to each other.
+
+So there is a clustering phase before LearnGaussParams? Take the
+experiement for example. In the first step, white and green are both
+unknown. They cluster the pixels to two classes first, and call the
+class with more pixels as green, and the other as white?
+
+I'm not sure 
+
+== Summary ==
+
+*. Fast and Cheap Color Image Segmentation for Interactive Robots
+
+The authors describe a fast and cheap way to do image segmentation.
+They believe previous methods are time-consuming or requiring
+pre-classifed samples.
+
+They rotate the color space to make the judging conditions become
+linear. Then, they decide the color class for each color by binary
+operations. After than, they encode the classifed color linewise, and
+find regions of same color by union and find.
+
+*. The UT Austin Villa 2003 Four-Legged Team
+
+The authors give detailed procedure of determining beacon, goal and
+ball. For example, they employ tilt testing to eliminate spurious
+blobs, by checking whether objects should on the ground are on the
+ground. They use aspect ratio to determine the likelihood of
+appearance of objects.
+
+*. The UT Austin Villa 2004 RoboCup Four-Legged Team: Coming of Age
+
+The line detection is conducted by, first, finding green-white(-green)
+transitions and project them down to the ground. Then it checks the
+lines appear reasonably in size and distance. After that, regarding to
+the width and position of lines, the observed lines are classified.
+Finally, they find out the intersection of lines.
+
+*. Autonomous Color Learning on a Mobile Robot
+
+
