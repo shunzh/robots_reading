@@ -1,0 +1,52 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Omnidirectional Walking Using ZMP and Preview Control for the NAO
+Humanoid Robot
+
+I think the Walk Provider in Figure 2 can be clearer if drawn
+hiarachically. The control is compuated from controller down to the
+inverse kinematics.
+
+The main issue here is to balance the robot when it's walking. This is
+dealt with in equation (3), which combines the preview gain and the
+ZMP. After that the author moves on the kinematics computation.
+Actually, how is equation (3) justified? Would simply multifying the
+gain and p_ref be sufficient?
+
+I'm not sure about their methods determining delta-theta, which is the
+desired amount of perturbation in each joint..
+
+*. A Center of Mass Observing 3D-LIPM Gait for the RoboCup Standard
+Platform League Humanoid
+
+
+*. Design and Optimization of an Omnidirectional Humanoid Walk: A
+Winning Approach at the RoboCup 2011 3D Simulation Competition
+
+== Summary ==
+
+*. Omnidirectional Walking Using ZMP and Preview Control for the NAO
+Humanoid Robot
+
+In S Frame, steps are computed based on CoM - it has a constant offset
+from the CoM.  F Frame determines the trajectory of moving foot. C
+Frame finally gives the joints control information. I frame computes
+the CoM to keep the robot balanced.
+
+The zero moment point is used to balance the robot when taking an
+action. Intuitively, when it's going ahead, the model suggests
+positioning the robot backward.
+
+Then the author takes both motion control and balance control in to
+consideration and gets equation (2).
+
+*. A Center of Mass Observing 3D-LIPM Gait for the RoboCup Standard
+Platform League Humanoid
+
+*. Design and Optimization of an Omnidirectional Humanoid Walk: A
+Winning Approach at the RoboCup 2011 3D Simulation Competition
+
+
