@@ -23,8 +23,11 @@ desired amount of perturbation in each joint..
 Platform League Humanoid
 
 
+
 *. Design and Optimization of an Omnidirectional Humanoid Walk: A
 Winning Approach at the RoboCup 2011 3D Simulation Competition
+
+designed hiarachically?
 
 == Summary ==
 
@@ -45,6 +48,16 @@ consideration and gets equation (2).
 
 *. A Center of Mass Observing 3D-LIPM Gait for the RoboCup Standard
 Platform League Humanoid
+
+The authors used a simulator for the motion of the center of mass. 
+They devide walking into single support phase, which is moving, and
+double support phase, which is for accelerating or decelerating.
+
+They then compute the step durations after that, which are linear
+combination of some vectors.  
+
+Center of mass is from the environment - something the robot couldn't
+observe. So the authors use Kalman filter for that.
 
 *. Design and Optimization of an Omnidirectional Humanoid Walk: A
 Winning Approach at the RoboCup 2011 3D Simulation Competition
