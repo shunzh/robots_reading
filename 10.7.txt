@@ -64,7 +64,7 @@ on object segmentation.
 
 Same as the first paper, the authors believe there is a mapping from
 color components to class of color. Should we involve position-related
-variable? Same color observation may be in different class depending
+variables? Same color observation may be in different class depending
 on context. But for ball as orange, goal as blue, ground as green,
 they are disjunct enough and should have no such necessity..
 
@@ -119,7 +119,7 @@ Finally, they find out the intersection of lines.
 *. Autonomous Color Learning on a Mobile Robot
 
 The authors describe an algorithm to learn color autonomously. The idea
-is expose the robot to a view which helps it learn certain colors. The
-knowledge is represented in Gaussian distribution, for a given sample,
-it only needs to compute the mean and variance of pixels with unknown
-colors.
+is to expose the robot to a view which helps it learn certain colors.
+The knowledge is represented in Gaussian distribution, for a given
+sample, it only needs to compute the mean and variance of pixels with
+unknown colors.
