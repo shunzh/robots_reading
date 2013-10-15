@@ -22,8 +22,9 @@ desired amount of perturbation in each joint..
 *. A Center of Mass Observing 3D-LIPM Gait for the RoboCup Standard
 Platform League Humanoid
 
-I don't know what to ask about this paper. Their formula seem make
-sense but I'm not completely clear with them..
+I'm not clear with their figures, especially Figure 4, which seems an
+essential one. Maybe I should go over this paper more carefully to
+understand it..
 
 *. Design and Optimization of an Omnidirectional Humanoid Walk: A
 Winning Approach at the RoboCup 2011 3D Simulation Competition
