@@ -35,7 +35,7 @@ The exploration over (state, action) space is a non-trivial task. It's
 okay to unbiasedly randomly select actions. But for more efficient
 exploration, it needs to get to unknown (state, action) pairs quickly. 
 
-The authors limit the sensor model to be invertible. I think it's
+The authors limit the sensor model to be invertable. I think it's
 possible to have a probability version of ASAMI, every function in
 this paper will be a probability distribution. Then there is no such
 limitation.
