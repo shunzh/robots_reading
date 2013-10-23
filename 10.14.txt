@@ -1,0 +1,95 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Omnidirectional Walking Using ZMP and Preview Control for the NAO
+Humanoid Robot
+
+I think the Walk Provider in Figure 2 can be clearer if drawn
+hierarchically. The control is computed from controller down to the
+inverse kinematics.
+
+The main issue here is to balance the robot when it's walking. This is
+dealt with in equation (3), which combines the preview gain and the
+ZMP. After that the author moves on the kinematics computation.
+Actually, how is equation (3) justified? Would simply multiplying the
+gain and p_ref be sufficient?
+
+I'm not sure about their methods determining delta-theta, which is the
+desired amount of perturbation in each joint..
+
+*. A Center of Mass Observing 3D-LIPM Gait for the RoboCup Standard
+Platform League Humanoid
+
+I'm not clear with their figures, especially Figure 4, which seems an
+essential one. Maybe I should go over this paper more carefully to
+understand it..
+
+*. Design and Optimization of an Omnidirectional Humanoid Walk: A
+Winning Approach at the RoboCup 2011 3D Simulation Competition
+
+It makes sense to put mathematical constraints onto the parameters,
+and give initial values with physics knowledge, otherwise it's a space
+too large to do searching.
+
+The authors use evolutionary algorithms to learn the parameters in the
+simulator, and then apply that to real Nao. Does it make sense to
+train the walking parameters on the simulator and the real robot
+back and forth? The simulator may want to know what's the performance
+on real robot and then continue learning (I think I have seen this
+idea from some paper..).
+
+Should the walking task be designed hierarchically? In the simulator,
+we can let it learn high-level control first, then learn each control
+separately. It should be better than learning walking directly.
+
+I think the policy search part is similar to the policy gradient RL on
+Aibo, a paper which we read in the last semester. Is CMA-ES always
+better than the policy gradient algorithm? If there is a chance,
+should the RL paper also use CMA-ES? The RL paper shows that Aibo can
+learn walking well in hours, on real robots, because it's an easier
+for Aibo?
+
+== Summary ==
+
+*. Omnidirectional Walking Using ZMP and Preview Control for the NAO
+Humanoid Robot
+
+In S Frame, steps are computed based on CoM - it has a constant offset
+from the CoM.  F Frame determines the trajectory of moving foot. C
+Frame finally gives the joints control information. I frame computes
+the CoM to keep the robot balanced.
+
+The zero moment point is used to balance the robot when taking an
+action. Intuitively, when it's going ahead, the model suggests
+positioning the robot backward.
+
+Then the author takes both motion control and balance control in to
+consideration and gets equation (2).
+
+*. A Center of Mass Observing 3D-LIPM Gait for the RoboCup Standard
+Platform League Humanoid
+
+The authors used a simulator for the motion of the center of mass.
+They divide walking into single support phase, which is moving, and
+double support phase, which is for accelerating or decelerating.
+
+They then compute the step durations after that, which are linear
+combination of some vectors.  
+
+Center of mass is from the environment - something the robot couldn't
+observe. So the authors use Kalman filter for that.
+
+*. Design and Optimization of an Omnidirectional Humanoid Walk: A
+Winning Approach at the RoboCup 2011 3D Simulation Competition
+
+The authors describe a method to learn walking in simulator first, and
+then transfer to real robot. They give a list of parameters to be
+learned, and their relationship.
+
+They theoretically initialize these parameters. To optimize them, they
+employ CMA-ES to search on policies, then test them on real robots.
+
+They also design subtasks to learn first, which contribute to more
+complicated tasks.
