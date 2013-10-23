@@ -1,0 +1,36 @@
+Team member(s): Shun Zhang, ?
+
+*. Proposal (same as previous mail)
+
+Regarding the ASAMI paper, actions are selected randomly in the
+training. but action selection can be biased according to the current
+belief.  In this sense, the agent should be able to determine which
+(state, action) pairs are uncertain and need more samples.
+
+However, the agent doesn't know the correctness of the models. It only
+knows the consistency of them. For example, states with larger
+difference in action model and sensor model ( |W_a - W_s| ) should be
+re-learned.  Unobserved states, even possible predicted by the current
+model, should also have higher priorities to be visited.
+
+Ideally, this should make ASAMI more efficient.
+
+*. Approach
+
+I will build a simulator which naively gives the agent the height of
+the beacon based on the position. This simply contains a sensor
+function and an action function.
+
+Then, implement ASAMI and the version with proposed modification.
+
+In the developmental robots literature, Reinforcement Learning is
+usually used for action selection. The costs are defined as the
+difference between the prediction model and sensor model. It's
+possible to employ a RL framework here, if time permits. I'll explore
+closely in the literature review.
+
+*. Goal
+
+Show that the proposed version outperforms the one described in the
+class reading in terms of efficiency. This improvement should be first
+observed in the simulator, then on the Nao.
