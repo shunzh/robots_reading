@@ -1,11 +1,11 @@
 Team member(s): Shun Zhang, ?
 
-*. Proposal (same as previous mail)
+*. Proposal (same as the previous mail)
 
 Regarding the ASAMI paper, actions are selected randomly in the
-training. but action selection can be biased according to the current
-belief.  In this sense, the agent should be able to determine which
-(state, action) pairs are uncertain and need more samples.
+training. However, action selection can be biased according to the
+current belief.  In this sense, the agent should be able to determine
+which (state, action) pairs are uncertain and need more samples.
 
 However, the agent doesn't know the correctness of the models. It only
 knows the consistency of them. For example, states with larger
@@ -21,11 +21,15 @@ I will build a simulator which naively gives the agent the height of
 the beacon based on the position. This simply contains a sensor
 function and an action function.
 
-Then, implement ASAMI and the version with proposed modification.
+Then, implement ASAMI and the version with proposed modification. Test
+this in the simulator, and further on Nao.
+
+The setup of environment of Nao is same as the one for Aibo. I'll use
+PID control to keep it work in a straight line.
 
 In the developmental robots literature, Reinforcement Learning is
 usually used for action selection. The costs are defined as the
-difference between the prediction model and sensor model. It's
+difference between the prediction model and the sensor model. It's
 possible to employ a RL framework here, if time permits. I'll explore
 closely in the literature review.
 
