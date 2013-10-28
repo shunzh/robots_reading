@@ -1,0 +1,41 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. RRT
+
+I think the setting of nonholonomic path planning only affects the
+NEW_STATE function in Figure 1. The framework of algorithms is not
+affected by the different settings of the environment. So I don't know
+why the author classifies the planning problem into three categories
+first.
+
+The challange in this paper is that the searching space is continous.
+To deal with this problem, there are at least following approaches,
+- discretefy the space. This may not be a good idea, as the positions
+  and actions would become less expressive.
+- encourage the agent to search unexplored space - this is the
+  performance of RRL. Otherwise, the agent may believe he has visited
+  many states, but actually in a small subspace.
+- using a RL framework. There could be a metric to describe the
+  "occupation" of the explored states in the space. The reward is the
+  incremental of such occupation when taking an action. We can use UCT
+  for searching.
+
+In RRT-GoalBias, there is a delimma of sampling a point near the goal,
+or randomly. Can we use something like A* here? The performance should
+be that when the states with smallest f values explored and got stuck,
+the states with larger f values would autoumatically be explored.
+
+*. D* lite
+
+For LPA*, does it run A* once to get initial g values, and then run
+LPA* forever to respond to changes?
+
+== Summary ==
+
+*. RRT
+
+*. D* lite
+
