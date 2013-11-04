@@ -5,7 +5,35 @@ EID: sz4554
 
 *. Intelligence without Representation
 
+The author uses the example of evolution of intelligence on the earth.
+However, that is more likely to be an *uncouscious process*. While AI
+is a kind of *intelligent design*. We do make intelligent agent much
+faster than the earth did.
 
+I think abstraction is necessary. The author seems not to completely
+disagree on abstraction. When we want to solve a problem that
+generally apply to many concrete problems, we do need abstraction.
+
+I don't think the man, chair and banana example is a good one. It's
+possible that a child also employes something like first-order
+representation, like HUNGERY + FOOD -> -HUNGERY, BANANA is FOOD, CHAIR
+is SUSTAINABLE. A child who has not known any of these facts still
+cannot come up with a plan.
+
+It's a good point that we shouldn't always provide the robot with our
+introspection to the world. But it's okay if we want to make something
+human-like.
+
+The author's definition on Creature actually means fully autonomous
+agent.
+
+If I understand correctly, neural networks and genetic algorithms have
+closer performance to the idea described by the author, even though
+they still have explicit representations.
+
+Actually I still have a hard time understanding how they could
+eliminate representation totally. This was published quite early. Was
+there any progress in this direction in AI?
 
 *. Experiences with an Architecture for Intelligent, Reactive Agents
 
