@@ -1,0 +1,26 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Distributed Intelligence: Overview of the Field and its Application
+in Multi-Robot Systems
+
+*. Swarmanoid: a novel concept for the study of heterogeneous robotic
+swarms
+
+*. Coordinating Hundreds of Cooperative, Autonomous Vehicles in
+Warehouses
+
+== Summary ==
+
+*. Distributed Intelligence: Overview of the Field and its Application
+in Multi-Robot Systems
+
+*. Swarmanoid: a novel concept for the study of heterogeneous robotic
+swarms
+
+*. Coordinating Hundreds of Cooperative, Autonomous Vehicles in
+Warehouses
+
+
