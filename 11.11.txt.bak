@@ -11,7 +11,7 @@ domains. Each agent would be simple - they just mind their own
 business, but contribute to a shared goal on a higher level.
 
 I don't think classification on goals by being "individual" or
-"shared" is a good approach. I would go for "conflicting" or
+"shared" is a good criteria. I would go for "conflicting" or
 "neutral". The authors also mentioned that individual goals could be
 shared goals from a higher-level perspective.
 
@@ -19,6 +19,9 @@ I think ad-hoc teamwork can be better regarded as collective instead
 of cooperative. So, in a collective domain, the agent may not be aware
 of others, or simply don't have enough access to communicate with
 others.
+
+I didn't get the knowledge-based paradigm - it seems quite obvious.
+Knowledge needs to be represented. What's special here?
 
 Task allocation is a good approach. But I think the task can be
 generally regarded as a multi-agent MDP problem. So the roles could be
@@ -45,12 +48,10 @@ I don't think that each agent needs to accomplish tasks individually.
 As the requests keep coming in, it's possible that an agent changes
 its schedule on its way fetching an item. I think this is very similar
 to AIM, if we consider pods as coming vehicles, and robots as lanes.
-The question is, which pod (vehicle) should be assigned to which robot
-(lane) first to get to the sorter (intersection).
 
-A* is not enough for multi-agent path planning. They can simply let
-agents stop to avoid collision though, if they don't consider the time
-of congestoin.
+A* is not enough for multi-agent path planning. However, They can
+simply let agents stop to avoid collision though, if they don't
+consider the time of congestion.
 
 I think concurrency is a problem in multi-agent system. It's a general
 problem in distributed systems.
@@ -64,8 +65,8 @@ different agents to run different sequencer.
 *. Distributed Intelligence: Overview of the Field and its Application
 in Multi-Robot Systems
 
-Domains can be devided into categories of collective, cooperative,
-collaboraive and coordinative, depending on awareness of others, type
+Domains can be divided into categories of collective, cooperative,
+collaborative and coordinate, depending on awareness of others, type
 of goals and whether the environment is adversarial.
 
 There are several approaches. 1) Bioinspired, which is very close to
@@ -84,4 +85,11 @@ other forms of information exchange.
 *. Coordinating Hundreds of Cooperative, Autonomous Vehicles in
 Warehouses
 
+The author introduce their way of using lots of homogeneous robots for
+warehouse management. It's in the collaborative domain as described in
+the first paper.
 
+They desgin their own architecture, which contains a job manager,
+inventory station agent and drive unit agent. There is good isolation
+between them. They make use of path planning and resource allocation
+techneques.
