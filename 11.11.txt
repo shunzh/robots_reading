@@ -6,16 +6,66 @@ EID: sz4554
 *. Distributed Intelligence: Overview of the Field and its Application
 in Multi-Robot Systems
 
+Behavior architecture may have a good application in collective
+domains. Each agent would be simple - they just mind their own
+business, but contribute to a shared goal on a higher level.
+
+I don't think classification on goals by being "individual" or
+"shared" is a good approach. I would go for "conflicting" or
+"neutral". The authors also mentioned that individual goals could be
+shared goals from a higher-level perspective.
+
+I think ad-hoc teamwork can be better regarded as collective instead
+of cooperative. So, in a collective domain, the agent may not be aware
+of others, or simply don't have enough access to communicate with
+others.
+
+Task allocation is a good approach. But I think the task can be
+generally regarded as a multi-agent MDP problem. So the roles could be
+implicit and agents can change their roles implicitly.
+
+Another reason I believe that robots should be considered as
+autonomous agents most of the time in this class. Only very few parts
+in this paper have concern on the hardware of real robots.
+
 *. Swarmanoid: a novel concept for the study of heterogeneous robotic
 swarms
 
+Different from the previous paper, the robots here are heterogeneous.
+They have roles, common goals and are aware of others. But the roles
+still need to be assigned for same type of robots.
+
+I think "self-assembly" is an interesting idea, which sounds like
+robots in anime..
+
 *. Coordinating Hundreds of Cooperative, Autonomous Vehicles in
 Warehouses
+
+I don't think that each agent needs to accomplish tasks individually.
+As the requests keep coming in, it's possible that an agent changes
+its schedule on its way fetching an item. 
+
+I think concurrency is a problem in multi-agent system. It's a general
+problem in distributed systems.
+
+Regarding their design of control system, I think 3T can be
+generalized for multi-agent system. The Goal in planner can ask
+different agents to run different sequencer.
 
 == Summary ==
 
 *. Distributed Intelligence: Overview of the Field and its Application
 in Multi-Robot Systems
+
+Domains can be devided into categories of collective, cooperative,
+collaboraive and coordinative, depending on awareness of others, type
+of goals and whether the environment is adversarial.
+
+There are several approaches. 1) Bioinspired, which is very close to
+behavior architecture. Each agent can have very naive behavior, but
+their overall performance is complicated. 2) Organizational, in which
+roles are defined, which further introduce task allocation problem. 3)
+Knowledge-based and/or semantic paradigm.
 
 *. Swarmanoid: a novel concept for the study of heterogeneous robotic
 swarms
