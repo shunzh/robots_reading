@@ -43,7 +43,14 @@ Warehouses
 
 I don't think that each agent needs to accomplish tasks individually.
 As the requests keep coming in, it's possible that an agent changes
-its schedule on its way fetching an item. 
+its schedule on its way fetching an item. I think this is very similar
+to AIM, if we consider pods as coming vehicles, and robots as lanes.
+The question is, which pod (vehicle) should be assigned to which robot
+(lane) first to get to the sorter (intersection).
+
+A* is not enough for multi-agent path planning. They can simply let
+agents stop to avoid collision though, if they don't consider the time
+of congestoin.
 
 I think concurrency is a problem in multi-agent system. It's a general
 problem in distributed systems.
@@ -69,6 +76,10 @@ Knowledge-based and/or semantic paradigm.
 
 *. Swarmanoid: a novel concept for the study of heterogeneous robotic
 swarms
+
+The author introduce three types of heterogeneous robots: food-robot,
+hand-robot and eye-robot. They can cooperate by physical assembly and
+other forms of information exchange.
 
 *. Coordinating Hundreds of Cooperative, Autonomous Vehicles in
 Warehouses
