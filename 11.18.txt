@@ -11,12 +11,21 @@ multiple autonomous vehicles on the road, it's necessary to consider
 whether a centralized (like AIM) or distributed system could work
 better.
 
-For autonomous driving, one way is using very robotic way - designing
-each modules with human experience. Another way is treating this as a
-hierachical RL problem.
+For autonomous driving, one way is using very a robotic way -
+designing each modules with human experience. Another way is treating
+this as a hierarchical RL problem.
 
 *. Cloth Grasp Point Detection based on Multiple-View Geometric Cues
 with Application to Robotic Towel Folding
+
+Borders detection can be regarded as a supervised learning problem. I
+think the authors have done this, when they say they classify depth
+discontinuities to actual borders.
+
+When the agent uses filtering algorithm to figure out the
+configuration of the cloth, does it assume that the effect of grapes
+could be predicted well? Any noise in the action may make the
+transition not as expected.
 
 == Summary ==
 
@@ -43,4 +52,9 @@ make it have desired behavior.
 *. Cloth Grasp Point Detection based on Multiple-View Geometric Cues
 with Application to Robotic Towel Folding
 
+The authors discussed a solution to a towel folding problem. As the
+borders are essential for the folding action, the authors started with
+finding accurate borders from depth discontinuities.
 
+So they use a filtering algorithm to track the depth discontinuities
+and do planning on top of that.
