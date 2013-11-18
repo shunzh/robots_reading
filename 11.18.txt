@@ -1,0 +1,20 @@
+Name: Shun Zhang
+EID: sz4554
+
+== Comments and Questions ==
+
+*. Autonomous driving in urban environments: Boss and the Urban
+Challenge 
+
+*. Cloth Grasp Point Detection based on Multiple-View Geometric Cues
+with Application to Robotic Towel Folding
+
+== Summary ==
+
+*. Autonomous driving in urban environments: Boss and the Urban
+Challenge 
+
+*. Cloth Grasp Point Detection based on Multiple-View Geometric Cues
+with Application to Robotic Towel Folding
+
+
