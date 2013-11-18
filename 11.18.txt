@@ -6,6 +6,15 @@ EID: sz4554
 *. Autonomous driving in urban environments: Boss and the Urban
 Challenge 
 
+So the author didn't consider a multi-agent approach. If there are
+multiple autonomous vehicles on the road, it's necessary to consider
+whether a centralized (like AIM) or distributed system could work
+better.
+
+For autonomous driving, one way is using very robotic way - designing
+each modules with human experience. Another way is treating this as a
+hierachical RL problem.
+
 *. Cloth Grasp Point Detection based on Multiple-View Geometric Cues
 with Application to Robotic Towel Folding
 
@@ -13,6 +22,23 @@ with Application to Robotic Towel Folding
 
 *. Autonomous driving in urban environments: Boss and the Urban
 Challenge 
+
+The driving task involves multiple challenges.
+
+1) Motion planning. The agent needs to determine the trajectory and
+plan to follow that using control theory.
+
+2) Perception. This builds the belief of the surrounding world. It's
+quite straightforward to use filtering algorithms here.
+
+3) Mission planning. This makes the vehicle has higher-level
+performance, with motion planning and perception. The roads are
+represented as a graph, and each node is assigned with values, like in
+RL.
+
+4) Behavioral reasoning. It responds to the mission planning, and
+considers other vehicles on the road. This involves much planning to
+make it have desired behavior.
 
 *. Cloth Grasp Point Detection based on Multiple-View Geometric Cues
 with Application to Robotic Towel Folding
